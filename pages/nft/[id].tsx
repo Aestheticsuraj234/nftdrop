@@ -1,5 +1,5 @@
 import React from "react";
-import { useAddress, useDisconnect, useMetamask ,useBalance } from "@thirdweb-dev/react";
+import { useAddress, useDisconnect, useMetamask  } from "@thirdweb-dev/react";
 import { sanityClient, urlFor } from "../../sanity";
 import { Collection } from "../../typings";
 import  Link  from "next/link";
@@ -13,10 +13,7 @@ interface Props {
   const connectWithMetamask = useMetamask();
   const address = useAddress();
   const disConnect = useDisconnect();
-  const funds =  useBalance();
-  console.log(funds)
-
-
+ 
   // ...
 
   return (
