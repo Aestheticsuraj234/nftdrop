@@ -95,7 +95,7 @@ interface Props {
 
 export default NFTDropPage;
 
-export const getServerSideProps: GetServerSideProps = async ({params}) => {
+export const getServerSideProps:GetServerSideProps = async ({params}) => {
   const query = `*[_type == "collection" && slug.current==$id][0]{
     _id,
     title,
