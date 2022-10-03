@@ -1,18 +1,21 @@
 import React from "react";
-import { useAddress, useDisconnect, useMetamask } from "@thirdweb-dev/react";
+import { useAddress, useDisconnect, useMetamask ,useBalance } from "@thirdweb-dev/react";
 import { sanityClient, urlFor } from "../../sanity";
 import { Collection } from "../../typings";
 import  Link  from "next/link";
 
 interface Props {
-  collections: Collection;
+  collection: Collection;
 }
 
-function NFTDropPage({ collection }: Props) {
+ function NFTDropPage({ collection }: Props) {
   // authentication
   const connectWithMetamask = useMetamask();
   const address = useAddress();
   const disConnect = useDisconnect();
+  const funds =  useBalance();
+  console.log(funds)
+
 
   // ...
 
@@ -24,7 +27,7 @@ function NFTDropPage({ collection }: Props) {
           <div className="bg-gradient-to-br from-yellow-400 to-purple-600 p-2 rounded-xl">
             <img
               className="w-44 rounded-xl object-cover lg:h-96 lg:w-72 "
-              src={urlFor(collection.previewImage).url()}
+              src={urlFor(collection.mainImage).url()}
               alt=""
             />
           </div>
